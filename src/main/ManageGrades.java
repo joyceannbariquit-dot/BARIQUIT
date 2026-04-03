@@ -368,11 +368,12 @@ if (confirm == javax.swing.JOptionPane.YES_OPTION) {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ManageGrades().setVisible(true);
+          if (UserSession.loggedInUser == null) {
+    javax.swing.JOptionPane.showMessageDialog(null, "Required Login!");
+    new login().setVisible(true);
+  
             }
-        });
+     
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

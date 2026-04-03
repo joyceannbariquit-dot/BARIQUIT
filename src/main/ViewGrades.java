@@ -88,6 +88,7 @@ public ViewGrades(String email) {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -128,13 +129,10 @@ public ViewGrades(String email) {
             java.util.logging.Logger.getLogger(ViewGrades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewGrades().setVisible(true);
-            }
-        });
+    if (UserSession.loggedInUser == null) {
+    javax.swing.JOptionPane.showMessageDialog(null, "Required Login!");
+    new login().setVisible(true);
+          }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

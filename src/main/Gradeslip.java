@@ -210,11 +210,11 @@ private void printRecord(javax.swing.JPanel panel) {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-   
-            }
-        });
+           if (UserSession.loggedInUser == null) {
+    javax.swing.JOptionPane.showMessageDialog(null, "Required Login!");
+    new login().setVisible(true);
+  
+           }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

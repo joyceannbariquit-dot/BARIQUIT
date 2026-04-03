@@ -385,12 +385,10 @@ public class Student_dashboard extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Student_dashboard().setVisible(true);
-            }
-        });
+          if (UserSession.loggedInUser == null) {
+    javax.swing.JOptionPane.showMessageDialog(null, "Required Login!");
+    new login().setVisible(true);
+          }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

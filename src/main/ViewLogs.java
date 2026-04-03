@@ -122,6 +122,7 @@ public class ViewLogs extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -162,13 +163,10 @@ public class ViewLogs extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ViewLogs.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ViewLogs().setVisible(true);
-            }
-        });
+    if (UserSession.loggedInUser == null) {
+    javax.swing.JOptionPane.showMessageDialog(null, "Required Login!");
+    new login().setVisible(true);
+          }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
